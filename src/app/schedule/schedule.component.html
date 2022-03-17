@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Schedule</h1>
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Sl.No</th>
+            <th>Match</th>
+            <th>Date</th>
+            <th>time</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule  of result">
+          <td>{{ schedule.SlNo }}</td>
+          <td>{{ schedule.Match }}</td>
+          <td>{{ schedule.Date }}</td>
+          <td>{{ schedule.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+

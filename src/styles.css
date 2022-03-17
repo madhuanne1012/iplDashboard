@@ -1,0 +1,23 @@
+body {
+    margin: 25px;
+    background-color: rgb(240,240,240);
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    height: 96px;
+  }
+  
+  /* Applies to all <h1>...</h1> elements. */
+  h1 {
+    font-size: 35px;
+    font-weight: normal;
+    margin-top: 5px;
+  }
+  .container{
+    display:table;
+    height:800px;
+    width:100%;
+    border: 100px;
+}
+.mt-0 {
+    margin-top: 1 !important;
+  }
