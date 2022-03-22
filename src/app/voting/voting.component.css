@@ -4,21 +4,37 @@
     font-size: 13px;
     line-height: 30px;
     margin: 0;
-     outline: 0;
+    outline: 0;
     overflow: hidden;
     padding: 0;
-}
-
-label {
+  }
+  
+  label {
     vertical-align: middle;
-    }
-
-.radio-container input {
-     box-sizing: border-box;
+  }
+  
+  .radio-container input {
+    box-sizing: border-box;
     margin: 0;
     outline: 0;
     padding: 0;
     position: relative;
     top: 9px;
     vertical-align: top;
- }
+  }
+  .form-check-input {
+    margin: 0.5rem 1rem;
+  }
+  .custom-label {
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -3px;
+    cursor: pointer;
+  }
+  .team-img {
+    width: 35px;
+    margin-top: 5px;
+  }
+  

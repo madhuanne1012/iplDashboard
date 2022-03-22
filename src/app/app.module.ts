@@ -9,6 +9,8 @@ import { VotingComponent } from './voting/voting.component';
 import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PositionComponent } from './position/position.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 //import { ScheduleService } from './schedule/schedule.service';
 
 
@@ -22,7 +24,9 @@ import { PositionComponent } from './position/position.component';
     FooterComponent,
     myRouting,
     VotingComponent,
-    PositionComponent   
+    PositionComponent,
+    RegistrationComponent,
+    LandingPageComponent   
      
   ],
   imports: [

@@ -1,43 +1,92 @@
-<form [formGroup]="profileForm">
-<div class="container"  class="form-group" >
- <table class="table table-bordered border-red"  >
-    <thead>
-     <tr>
+<form [formGroup]="profileForms" (ngSubmit)="onSubmit(profileForms)">
+  <div class="container" class="form-group">
+    <table class="table table-bordered border-red">
+      <thead>
+        <tr>
           <th scope="col">Sl.No</th>
           <th scope="col">Match</th>
-          <th scope="col">Date</th>
-          <th scope="col">time</th>
+          <th scope="col">Points</th>
+          <th scope="col">Vote</th>
         </tr>
-    </thead>
-   
-      <tr *ngFor="let schedule  of votingList">
-        <td>{{ schedule.SNo }}</td>
-        <td>{{ schedule.Match }}</td>
-         <td>
-         <select class="ui selection dropdown" (change)="selectChangeHandler($event)"  formControlName="points" class="form-control" >
-              <option>Choose Amount</option>
-              <option value="schedule.Points[0]">{{ schedule.Points[0]}}</option>
-              <option value="schedule.Points[1]">{{schedule.Points[1]}}</option>
-              <option value="schedule.Points[2]">{{schedule.Points[2]}}</option>
-            </select>
-          </td> 
+      </thead>
 
-             
-        <!-- <td>{{ schedule.vote }}</td> -->
-       <!-- <td><div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="selection" id="inlineRadio1" value="{{schedule.vote[0]}}">
-          <label class="radio-inline" for="inlineRadio1">{{ schedule.vote[0]}}</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="selection" id="inlineRadio2" value="{{schedule.vote[1]}}">
-          <label class="radio-inline" for="inlineRadio2">{{ schedule.vote[1]}}</label>
-        </div>
-      </td> -->
-        <td> 
-         
-      </td>
+      <tr *ngFor="let schedule of votingList">
+        <td>{{ schedule.SNo }}</td>
+        <td>
+          {{ schedule.vote[0] | uppercase }} vs
+          {{ schedule.vote[1] | uppercase }}
+        </td>
+        <td formGroupName="match_no_{{ schedule.SNo }}">
+          <select
+            class="ui selection dropdown"
+            (change)="selectChangeHandler($event)"
+            formControlName="points"
+            class="form-control"
+          >
+            <option value="">Choose Amount</option>
+            <option value="{{ schedule.Points[0] }}">
+              {{ schedule.Points[0] }}
+            </option>
+            <option value="{{ schedule.Points[1] }}">
+              {{ schedule.Points[1] }}
+            </option>
+            <option value="{{ schedule.Points[2] }}">
+              {{ schedule.Points[2] }}
+            </option>
+          </select>
+        </td>
+
+        <td formGroupName="match_no_{{ schedule.SNo }}">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="{{ schedule.vote[0] }}_{{ schedule.SNo }}"
+              value="{{ schedule.vote[0] }}"
+              formControlName="vote"
+            />
+            <label
+              class="radio-inline custom-label"
+              for="{{ schedule.vote[0] }}_{{ schedule.SNo }}"
+            >
+              <span>
+                {{ schedule.vote[0] | uppercase }}
+              </span>
+              <img
+                class="team-img"
+                [src]="getimages(schedule.vote[0])"
+                alt="team image"
+              />
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="{{ schedule.vote[1] }}_{{ schedule.SNo }}"
+              value="{{ schedule.vote[1] }}"
+              formControlName="vote"
+            />
+
+            <label
+              class="radio-inline custom-label"
+              for="{{ schedule.vote[1] }}_{{ schedule.SNo }}"
+            >
+              <span>
+                {{ schedule.vote[1] | uppercase }}
+              </span>
+              <img
+                class="team-img"
+                [src]="getimages(schedule.vote[1])"
+                alt="team image"
+              />
+            </label>
+          </div>
+        </td>
       </tr>
-  </table>
-  <button type="submit" class="btn btn-primary" >Submit</button>
-</div>
+    </table>
+    <div class="d-flex p-3 bd-highlight flex-row-reverse">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
 </form>

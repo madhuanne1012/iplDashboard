@@ -1,6 +1,20 @@
 [
-    {"SNo": 1,"Match": "CSK  Vs  KKR","Points":[30,60,90],"vote":["csk","kkr"]},
-    {"SNo": 2,"Match": "SRH  Vs  KKR","Points":[30,60,90],"vote":["srh","kkr"]},
-    {"SNo": 3,"Match": "MI  Vs  SP","Points":[30,60,90],"vote":["MI","SP"]}
-
+  {
+    "SNo": 1,
+    "Match": "CSK  Vs  KKR",
+    "Points": [30, 60, 90],
+    "vote": ["csk", "kkr"]
+  },
+  {
+    "SNo": 6,
+    "Match": "SRH  Vs  KKR",
+    "Points": [30, 60, 90],
+    "vote": ["srh", "kkr"]
+  },
+  {
+    "SNo": 3,
+    "Match": "MI  Vs  DC",
+    "Points": [30, 60, 90],
+    "vote": ["MI", "DC"]
+  }
 ]
