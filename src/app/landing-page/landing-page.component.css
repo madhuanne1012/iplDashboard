@@ -1,0 +1,16 @@
+/*.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    /*top: 0; /* Position the navbar at the top of the page */
+    /*width: 100%; /* Full width 
+  }
+  */
+  /*body { padding-top: 40px; }*/
+  .navbar-nav > li{
+    margin-left:10px;
+    margin-right:30px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
