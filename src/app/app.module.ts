@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PositionComponent } from './position/position.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LogoutComponent } from './logout/logout.component';
 //import { ScheduleService } from './schedule/schedule.service';
 
 
@@ -26,7 +27,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     VotingComponent,
     PositionComponent,
     RegistrationComponent,
-    LandingPageComponent   
+    LandingPageComponent,
+    LogoutComponent   
      
   ],
   imports: [

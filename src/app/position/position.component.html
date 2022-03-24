@@ -1,1 +1,23 @@
-<p>position works!</p>
+<div class="container">
+    <!-- <h1>Schedule</h1> -->
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>TotalPoints</th>
+            <th>RemainingPoints</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let position  of result">
+          <td>{{ position.SlNo }}</td>
+          <td>{{ position.Name }}</td>
+          <td>{{ position.TotalPoints }}</td>
+          <td>{{ position.RemianingPoints}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+

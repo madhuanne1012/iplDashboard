@@ -9,7 +9,10 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  isLoggedin: boolean = false;
+
   ngOnInit(): void {
+    this.isLoggedin = localStorage.getItem('user_id') ? true : false;
   }
 
 }

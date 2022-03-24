@@ -1,0 +1,21 @@
+[
+    {
+      "SNo": 1,
+      "Name": "Test1",
+      "TotalPoints": 800,
+      "RemianingPoints": 200
+    },
+    {
+        "SNo": 2,
+        "Name": "Test2",
+        "TotalPoints": 600,
+        "RemianingPoints": 400
+      },
+      {
+        "SNo": 3,
+        "Name": "Test3",
+        "TotalPoints": 500,
+        "RemianingPoints": 500
+      }
+  ]
+  

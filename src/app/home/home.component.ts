@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService }  from '../data.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -24,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   constructor(public dataService : DataService,
     private _auth:AuthService,
-    private alertService: AlertService) {}
+    private alertService: AlertService) { }
 
     
 
@@ -37,19 +36,26 @@ export class HomeComponent implements OnInit {
    get f() { return this.loginForms.controls; }
 
    onSubmit(form:FormGroup){
-    this.dataService.login(this.loginForms.value, this.loginForms.value)
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    // get return url from query parameters or default to home page
-                  //        this.router.navigateByUrl(returnUrl);
-                },
-                error: (error: string) => {
-                  this.alertService.error(error);
-                  this.loading = false;
-              }
-          });
-  // this._auth.login(form.value.email,form.value.password).subscribe.
+      this.dataService.login(this.loginForms.value, this.loginForms.value)
+      .pipe(first())
+      .subscribe({
+          next: () => {
+              // get return url from query parameters or default to home page
+            //        this.router.navigateByUrl(returnUrl);
+          },
+          error: (error: string) => {
+            this.alertService.error(error);
+            this.loading = false;
+        }
+      });
+      //THIS BLOCK COMES INSIDE LOGIN SUCCSESS--START
+     const responseFromLoginSuccess = {email: this.loginForms.value.email, user_id: 10} //This informations will come from login response
+     localStorage.setItem('user_email',responseFromLoginSuccess.email)
+     localStorage.setItem('user_id', responseFromLoginSuccess.user_id.toString());
+     window.location.href = '/schedule'
+      //THIS BLOCK COMES INSIDE LOGIN SUCCSESS--END
+      
+      // this._auth.login(form.value.email,form.value.password).subscribe.
      
   }
 

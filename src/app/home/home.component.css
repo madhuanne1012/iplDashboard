@@ -1,16 +1,21 @@
-.height{
-      height:100%  }
-.container{
-        height:500px;
-        border: 100px;
-        background-color: #1e789b;
-    }
-    .divider:after,
+.height {
+  height: 100%;
+}
+.container_custom {
+  min-height: 500px;
+  border: 100px;
+  background-color: rgb(80, 115, 134);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+}
+.divider:after,
 .divider:before {
   content: "";
   flex: 1;
   height: 1px;
-  background: #eee;
+  background: rgb(80, 115, 134);
 }
 .h-custom {
   height: calc(100% - 73px);

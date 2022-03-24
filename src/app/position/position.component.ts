@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PositionService } from './position.service';
 
 @Component({
   selector: 'app-position',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PositionComponent implements OnInit {
 
-  constructor() { }
+  public result:any[] = [];
+  constructor(private _Positionservice:PositionService) { }
 
-  ngOnInit(): void {
-  }
+  
+  ngOnInit(){
+    this._Positionservice.getSchedule().subscribe(data => this.result=data);
+   }
 
 }
