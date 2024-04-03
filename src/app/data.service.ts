@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DataService {
 
-  API_KEY = 'e40d07f00b094602953cc3bf8537477e';
+  API_KEY = '';
   private _url:string="/assest/Schedule.json";
   public schedulelist=[];
   private baseurl="https://localhost:8080/fanatacyipl/api/auth/signin";
